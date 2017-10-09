@@ -13,3 +13,12 @@ C# Winform 窗体程序皮肤和效果
 9. Win7AeroForm - Win7毛玻璃效果
 
 ============ 以上修改：2017年9月29日 ============
+
+
+IrisKin4 防止窗体闪烁（常见于OpenDialog方式打开时），在构造方法中加入代码：
+~~~ c#
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.    
+            SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲   
+
+~~~
